@@ -3,6 +3,7 @@ from PyQt5.QtWidgets import QGraphicsScene, QApplication, QFileDialog, QMainWind
 from PyQt5.QtGui import QPixmap
 from numpy.fft import fft2, fftshift
 from numpy import log, array, pi, exp, zeros, dot
+from scipy.ndimage import zoom
 #from matplotlib.pyplot import imread, imsave
 from os import path
 ###PyQImageViewer
@@ -57,6 +58,9 @@ class image(object):
     def fft(self):
         data = self.data * exp(1j * (self.k ** 2 - self.kkx ** 2 - self.kky ** 2) ** (0.5 * image.dist))
         self.parsed_data = log(abs(fftshift(fft2(data))))
+        x,y = self.parsed_data.shape
+        if x != y:
+            self.parsed_data = zoom(self.parsed_data, ( max(x,y)/x, max(x,y)/y), order=3)
         return self.parsed_data
 
     def add(self, n=1):
