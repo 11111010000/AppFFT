@@ -518,7 +518,7 @@ class Ui_AppFFT(QtWidgets.QMainWindow):
         self.SubstractButton.setText(_translate("AppFFT", "Substract"))
         self.AverageButton.setText(_translate("AppFFT", "Average"))
         self.groupBox_3.setTitle(_translate("AppFFT", "File List"))
-        self.ResetButton.setText(_translate("AppFFT", "Reset File List"))
+        self.ResetButton.setText(_translate("AppFFT", "Clear File List"))
         self.label.setText(_translate("AppFFT", "Distance"))
         self.SaveButton.setText(_translate("AppFFT", "Save FFT Window"))
         self.HelpButton.setText(_translate("AppFFT", "Help"))

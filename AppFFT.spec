@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['AppFFT.py'],
-             pathex=['C:\\Users\\Luk\\Desktop\\AppFFT'],
+             pathex=['C:\\Users\\Luk\\Documents\\UJ\\sem2\\Pracownia Specjalistyczna 2\\Fourier App\\AppFFT'],
              binaries=[],
              datas=[],
              hiddenimports=[],
