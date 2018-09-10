@@ -138,7 +138,8 @@ class imagelist(QAbstractListModel):
 
     def fft_all(self):
         for i in self.container:
-            i.fft()
+            if i.sign != '=':
+                i.fft()
 
     def save_all(self):
         for i in self.container:
@@ -427,7 +428,8 @@ class Ui_AppFFT(QtWidgets.QMainWindow):
         print('FFTSingleButton click')
         QApplication.setOverrideCursor(QtCore.Qt.WaitCursor)
         image.dist = self.doubleSpinBox.value()
-        self.selected.fft()
+        if self.selected.sign != '=':
+            self.selected.fft()
         self.set_images()
         self.buttons_enabled()
         QApplication.restoreOverrideCursor()

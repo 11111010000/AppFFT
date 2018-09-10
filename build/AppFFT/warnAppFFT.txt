@@ -7,40 +7,40 @@ missing module named multiprocessing.get_context - imported by multiprocessing, 
 missing module named multiprocessing.BufferTooShort - imported by multiprocessing, multiprocessing.connection
 missing module named multiprocessing.AuthenticationError - imported by multiprocessing, multiprocessing.connection
 missing module named pyimod03_importers - imported by c:\users\luk\python\python36\lib\site-packages\PyInstaller\loader\rthooks\pyi_rth_pkgres.py
+missing module named 'com.sun' - imported by pkg_resources._vendor.appdirs
+missing module named com - imported by pkg_resources._vendor.appdirs
+missing module named StringIO - imported by numpy.lib.utils, numpy.testing.nose_tools.utils, scipy._lib.six, numpy.lib.format, pkg_resources._vendor.six
 missing module named __builtin__ - imported by numpy.core.numerictypes, numpy.core.numeric, scipy._lib.six, numpy.distutils.misc_util, numpy.lib.function_base, numpy.lib._iotools, numpy.ma.core, numpy, pkg_resources._vendor.pyparsing
 missing module named ordereddict - imported by pkg_resources._vendor.pyparsing
 missing module named 'pkg_resources.extern.pyparsing' - imported by pkg_resources._vendor.packaging.requirements, pkg_resources._vendor.packaging.markers
-missing module named StringIO - imported by numpy.lib.utils, numpy.testing.nose_tools.utils, scipy._lib.six, numpy.lib.format, pkg_resources._vendor.six
-missing module named 'com.sun' - imported by pkg_resources._vendor.appdirs
-missing module named com - imported by pkg_resources._vendor.appdirs
 missing module named __main__ - imported by pkg_resources
 missing module named pkg_resources.extern.packaging - imported by pkg_resources.extern, pkg_resources
 missing module named pkg_resources.extern.appdirs - imported by pkg_resources.extern, pkg_resources
 missing module named 'pkg_resources.extern.six.moves' - imported by pkg_resources, pkg_resources._vendor.packaging.requirements
 missing module named pkg_resources.extern.six - imported by pkg_resources.extern, pkg_resources
 missing module named 'multiprocessing.forking' - imported by c:\users\luk\python\python36\lib\site-packages\PyInstaller\loader\rthooks\pyi_rth_multiprocessing.py
-missing module named resource - imported by posix, C:\Users\Luk\Desktop\AppFFT\AppFFT.py
-missing module named posix - imported by os, C:\Users\Luk\Desktop\AppFFT\AppFFT.py
-missing module named _posixsubprocess - imported by subprocess, multiprocessing.util, C:\Users\Luk\Desktop\AppFFT\AppFFT.py
-missing module named org - imported by pickle, C:\Users\Luk\Desktop\AppFFT\AppFFT.py
-missing module named readline - imported by cmd, code, pdb, C:\Users\Luk\Desktop\AppFFT\AppFFT.py
-excluded module named _frozen_importlib - imported by importlib, importlib.abc, C:\Users\Luk\Desktop\AppFFT\AppFFT.py
-missing module named _frozen_importlib_external - imported by importlib._bootstrap, importlib, importlib.abc, C:\Users\Luk\Desktop\AppFFT\AppFFT.py
-missing module named _winreg - imported by platform, numpy.distutils.cpuinfo, C:\Users\Luk\Desktop\AppFFT\AppFFT.py, pkg_resources._vendor.appdirs
+missing module named resource - imported by posix, C:\Users\Luk\Documents\UJ\sem2\Pracownia Specjalistyczna 2\Fourier App\AppFFT\AppFFT.py
+missing module named posix - imported by os, C:\Users\Luk\Documents\UJ\sem2\Pracownia Specjalistyczna 2\Fourier App\AppFFT\AppFFT.py
+missing module named _posixsubprocess - imported by subprocess, multiprocessing.util, C:\Users\Luk\Documents\UJ\sem2\Pracownia Specjalistyczna 2\Fourier App\AppFFT\AppFFT.py
+missing module named readline - imported by cmd, code, pdb, C:\Users\Luk\Documents\UJ\sem2\Pracownia Specjalistyczna 2\Fourier App\AppFFT\AppFFT.py
+excluded module named _frozen_importlib - imported by importlib, importlib.abc, C:\Users\Luk\Documents\UJ\sem2\Pracownia Specjalistyczna 2\Fourier App\AppFFT\AppFFT.py
+missing module named _frozen_importlib_external - imported by importlib._bootstrap, importlib, importlib.abc, C:\Users\Luk\Documents\UJ\sem2\Pracownia Specjalistyczna 2\Fourier App\AppFFT\AppFFT.py
+missing module named _winreg - imported by platform, numpy.distutils.cpuinfo, C:\Users\Luk\Documents\UJ\sem2\Pracownia Specjalistyczna 2\Fourier App\AppFFT\AppFFT.py, pkg_resources._vendor.appdirs
 missing module named _scproxy - imported by urllib.request
-missing module named java - imported by platform, C:\Users\Luk\Desktop\AppFFT\AppFFT.py
-missing module named 'java.lang' - imported by platform, C:\Users\Luk\Desktop\AppFFT\AppFFT.py, xml.sax._exceptions
-missing module named vms_lib - imported by platform, C:\Users\Luk\Desktop\AppFFT\AppFFT.py
-missing module named termios - imported by tty, getpass, C:\Users\Luk\Desktop\AppFFT\AppFFT.py
-missing module named grp - imported by shutil, tarfile, pathlib, distutils.archive_util, C:\Users\Luk\Desktop\AppFFT\AppFFT.py
-missing module named pwd - imported by posixpath, shutil, tarfile, http.server, webbrowser, pathlib, distutils.util, distutils.archive_util, netrc, getpass, C:\Users\Luk\Desktop\AppFFT\AppFFT.py
-missing module named 'org.python' - imported by copy, setuptools.sandbox, C:\Users\Luk\Desktop\AppFFT\AppFFT.py, xml.sax
-missing module named _dummy_threading - imported by dummy_threading, C:\Users\Luk\Desktop\AppFFT\AppFFT.py
+missing module named java - imported by platform, C:\Users\Luk\Documents\UJ\sem2\Pracownia Specjalistyczna 2\Fourier App\AppFFT\AppFFT.py
+missing module named 'java.lang' - imported by platform, C:\Users\Luk\Documents\UJ\sem2\Pracownia Specjalistyczna 2\Fourier App\AppFFT\AppFFT.py, xml.sax._exceptions
+missing module named vms_lib - imported by platform, C:\Users\Luk\Documents\UJ\sem2\Pracownia Specjalistyczna 2\Fourier App\AppFFT\AppFFT.py
+missing module named termios - imported by tty, getpass, C:\Users\Luk\Documents\UJ\sem2\Pracownia Specjalistyczna 2\Fourier App\AppFFT\AppFFT.py
+missing module named grp - imported by shutil, tarfile, pathlib, distutils.archive_util, C:\Users\Luk\Documents\UJ\sem2\Pracownia Specjalistyczna 2\Fourier App\AppFFT\AppFFT.py
+missing module named _dummy_threading - imported by dummy_threading, C:\Users\Luk\Documents\UJ\sem2\Pracownia Specjalistyczna 2\Fourier App\AppFFT\AppFFT.py
+missing module named org - imported by copy, C:\Users\Luk\Documents\UJ\sem2\Pracownia Specjalistyczna 2\Fourier App\AppFFT\AppFFT.py
+missing module named pwd - imported by posixpath, shutil, tarfile, http.server, webbrowser, pathlib, distutils.util, distutils.archive_util, netrc, getpass, C:\Users\Luk\Documents\UJ\sem2\Pracownia Specjalistyczna 2\Fourier App\AppFFT\AppFFT.py
+missing module named 'org.python' - imported by pickle, setuptools.sandbox, C:\Users\Luk\Documents\UJ\sem2\Pracownia Specjalistyczna 2\Fourier App\AppFFT\AppFFT.py, xml.sax
 missing module named qimageview - imported by qimage2ndarray
 missing module named 'PyQt4.QtGui' - imported by QtImageViewer
 missing module named PyQt4 - imported by QtImageViewer
-missing module named numpy.array - imported by numpy, numpy.ma.core, numpy.ma.extras, numpy.ma.mrecords, numpy.ctypeslib, C:\Users\Luk\Desktop\AppFFT\AppFFT.py
-missing module named numpy.log - imported by numpy, C:\Users\Luk\Desktop\AppFFT\AppFFT.py
+missing module named numpy.array - imported by numpy, numpy.ma.core, numpy.ma.extras, numpy.ma.mrecords, numpy.ctypeslib, C:\Users\Luk\Documents\UJ\sem2\Pracownia Specjalistyczna 2\Fourier App\AppFFT\AppFFT.py
+missing module named numpy.log - imported by numpy, C:\Users\Luk\Documents\UJ\sem2\Pracownia Specjalistyczna 2\Fourier App\AppFFT\AppFFT.py
 missing module named numpy.lib.i0 - imported by numpy.lib, numpy.dual
 missing module named numpy.linalg.inv - imported by numpy.linalg, numpy.matrixlib.defmatrix, numpy.lib.polynomial
 missing module named dummy_thread - imported by numpy.core.arrayprint
