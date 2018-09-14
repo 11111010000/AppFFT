@@ -510,9 +510,7 @@ class Ui_AppFFT(QtWidgets.QMainWindow):
                 h = self.graphicsViewDw.mapToScene(self.graphicsViewDw.rect()).boundingRect().height()
                 gw = self.graphicsViewDw.width()
                 gh = self.graphicsViewDw.height()
-                Sv = self.graphicsViewDw.verticalScrollBar().width()
-                Sh = self.graphicsViewDw.horizontalScrollBar().height()
-                self.graphicsViewDw.pixmap().copy(x, y, w, h).scaled(gw-Sv, gh-Sh).save(fileName + '.png', "PNG")
+                self.graphicsViewDw.pixmap().copy(x, y, w, h).scaled(gw, gh).save(fileName + '.png', "PNG")
             else:
                 self.selected.save(fileName)
 
