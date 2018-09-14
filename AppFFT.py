@@ -3,11 +3,10 @@ from PyQt5.QtWidgets import QGraphicsScene, QApplication, QFileDialog, QMainWind
 from PyQt5.QtGui import QPixmap
 from numpy.fft import fft2, fftshift
 from numpy import log, array, pi, exp, zeros, dot
-from scipy.ndimage import zoom
 #from matplotlib.pyplot import imread, imsave
 from os import path
 ###PyQImageViewer
-from PyQt5.QtCore import Qt, QT_VERSION_STR, QAbstractListModel, QVariant
+from PyQt5.QtCore import Qt, QRectF, QT_VERSION_STR, QAbstractListModel, QVariant
 from PyQt5.QtGui import QImage, QPainter
 from QtImageViewer import QtImageViewer
 #####3
@@ -58,9 +57,6 @@ class image(object):
     def fft(self):
         data = self.data * exp(1j * (self.k ** 2 - self.kkx ** 2 - self.kky ** 2) ** (0.5 * image.dist))
         self.parsed_data = log(abs(fftshift(fft2(data))))
-        x,y = self.parsed_data.shape
-        if x != y:
-            self.parsed_data = zoom(self.parsed_data, ( max(x,y)/x, max(x,y)/y), order=3)
         return self.parsed_data
 
     def add(self, n=1):
@@ -72,10 +68,9 @@ class image(object):
         if not name:
             name = self.name
         if not self.parsed_data is None:
-            print("save"+name)
-            imsave(name+'.png', self.parsed_data, normalize=True, format='PNG')
-        else:
-            print("brak transformaty")
+            print("save" + name)
+            imsave(name + '.png', self.parsed_data, normalize=True, format='PNG')
+        else: print("brak transformaty")
 
     def ffted(self):
         if self.parsed_data is None:
@@ -499,7 +494,7 @@ class Ui_AppFFT(QtWidgets.QMainWindow):
         self.images.empty()
         self.tabWidget.setTabText(0, "Bitmap")
         self.tabWidget.setTabText(1, "FFT")
-        self.graphicsViewDw.setImage(QImage())
+        self.graphicsViewDw.clearImage()
         self.graphicsViewUp.setImage(QImage())
         self.graphicsViewUp.show()
         self.buttons_enabled()
@@ -508,7 +503,18 @@ class Ui_AppFFT(QtWidgets.QMainWindow):
         print('SaveButton click')
         fileName = QFileDialog.getSaveFileName(self, 'Save file', '', '', None, QFileDialog.DontUseNativeDialog)[0]
         if fileName:
-            self.selected.save(fileName)
+            if self.graphicsViewDw.zoomStack != []:
+                x = self.graphicsViewDw.mapToScene(self.graphicsViewDw.rect()).boundingRect().x()
+                y = self.graphicsViewDw.mapToScene(self.graphicsViewDw.rect()).boundingRect().y()
+                w = self.graphicsViewDw.mapToScene(self.graphicsViewDw.rect()).boundingRect().width()
+                h = self.graphicsViewDw.mapToScene(self.graphicsViewDw.rect()).boundingRect().height()
+                gw = self.graphicsViewDw.width()
+                gh = self.graphicsViewDw.height()
+                Sv = self.graphicsViewDw.verticalScrollBar().width()
+                Sh = self.graphicsViewDw.horizontalScrollBar().height()
+                self.graphicsViewDw.pixmap().copy(x, y, w, h).scaled(gw-Sv, gh-Sh).save(fileName + '.png', "PNG")
+            else:
+                self.selected.save(fileName)
 
     def retranslateUi(self, AppFFT):
         _translate = QtCore.QCoreApplication.translate
