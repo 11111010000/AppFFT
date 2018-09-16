@@ -28,9 +28,9 @@ class image(object):
 
         if len(raw_data.shape) == 2:
             self.data = raw_data
-        elif self.data.shape[2] == 3:
+        elif raw_data.shape[2] == 3:
             print("converting from RGB to greyscale")
-            self.data = dot(self.data[..., :3], [0.299, 0.587, 0.114])
+            self.data = dot(raw_data[..., :3], [0.299, 0.587, 0.114])
 
         self.x = self.data.shape[0]
         self.y = self.data.shape[1]
@@ -68,10 +68,13 @@ class image(object):
             return self.parsed_data/n
         return -self.parsed_data
 
-    def save(self, name=None):
+    def save(self, name=None, image=None):
         if not name:
             name = self.name
-        if not self.parsed_data is None:
+        if image:
+            print("save"+name)
+            imsave(name+'.png', image, normalize=True, format='PNG')
+        elif not self.parsed_data is None:
             print("save"+name)
             imsave(name+'.png', self.parsed_data, normalize=True, format='PNG')
         else:
@@ -508,7 +511,7 @@ class Ui_AppFFT(QtWidgets.QMainWindow):
         print('SaveButton click')
         fileName = QFileDialog.getSaveFileName(self, 'Save file', '', '', None, QFileDialog.DontUseNativeDialog)[0]
         if fileName:
-            self.selected.save(fileName)
+            self.graphicsViewDw.image().save(fileName)
 
     def retranslateUi(self, AppFFT):
         _translate = QtCore.QCoreApplication.translate
