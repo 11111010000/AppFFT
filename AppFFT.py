@@ -7,7 +7,7 @@ from scipy.ndimage import zoom
 #from matplotlib.pyplot import imread, imsave
 from os import path
 ###PyQImageViewer
-from PyQt5.QtCore import Qt, QT_VERSION_STR, QAbstractListModel, QVariant
+from PyQt5.QtCore import Qt, QRectF, QT_VERSION_STR, QAbstractListModel, QVariant
 from PyQt5.QtGui import QImage, QPainter
 from QtImageViewer import QtImageViewer
 #####3
@@ -502,7 +502,7 @@ class Ui_AppFFT(QtWidgets.QMainWindow):
         self.images.empty()
         self.tabWidget.setTabText(0, "Bitmap")
         self.tabWidget.setTabText(1, "FFT")
-        self.graphicsViewDw.setImage(QImage())
+        self.graphicsViewDw.clearImage()
         self.graphicsViewUp.setImage(QImage())
         self.graphicsViewUp.show()
         self.buttons_enabled()
@@ -511,7 +511,16 @@ class Ui_AppFFT(QtWidgets.QMainWindow):
         print('SaveButton click')
         fileName = QFileDialog.getSaveFileName(self, 'Save file', '', '', None, QFileDialog.DontUseNativeDialog)[0]
         if fileName:
-            self.graphicsViewDw.image().save(fileName)
+            if self.graphicsViewDw.zoomStack != []:
+                x = self.graphicsViewDw.mapToScene(self.graphicsViewDw.rect()).boundingRect().x()
+                y = self.graphicsViewDw.mapToScene(self.graphicsViewDw.rect()).boundingRect().y()
+                w = self.graphicsViewDw.mapToScene(self.graphicsViewDw.rect()).boundingRect().width()
+                h = self.graphicsViewDw.mapToScene(self.graphicsViewDw.rect()).boundingRect().height()
+                gw = self.graphicsViewDw.width()
+                gh = self.graphicsViewDw.height()
+                self.graphicsViewDw.pixmap().copy(x, y, w, h).scaled(gw, gh).save(fileName + '.png', "PNG")
+            else:
+                self.selected.save(fileName)
 
     def retranslateUi(self, AppFFT):
         _translate = QtCore.QCoreApplication.translate
